@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Débardeur technique Dry-Fit, idéal sport et chaleur. Livraison rapide partout en Algérie – E-coomy.">
+  <meta name="theme-color" content="#0e7a71">
+  <title>E-coomy | Débardeur Sport Dry-Fit</title>
+<!-- fonts-preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="../../assets/js/validation.js" defer></script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Passer au contenu principal</a>
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" role="navigation" aria-label="Navigation principale">
+        <a href="../../index.html" class="brand">E-coomy</a>
+
+        <button class="nav-toggle" type="button"
+                aria-label="Ouvrir le menu"
+                aria-expanded="false"
+                aria-controls="main-nav">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-links" id="main-nav" role="list">
+          <li><a href="../../index.html">Accueil</a></li>
+          <li><a href="../../index.html#produits">Produits</a></li>
+          <li><a href="../../index.html#a-propos">À propos</a></li>
+          <li><a href="../../index.html#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="../login.html"       class="btn btn-secondary btn-sm">Connexion</a>
+          <a href="../inscription.html" class="btn btn-primary   btn-sm">Inscription</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Fil d'ariane">
+      <div class="container">
+        <ol>
+          <li><a href="../../index.html">Accueil</a></li>
+          <li><a href="../../index.html#produits">Produits</a></li>
+          <li aria-current="page">Débardeur Sport Dry-Fit</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- Product + Order layout -->
+    <section class="section order-section"
+             aria-labelledby="order-heading-14">
+      <div class="container order-layout">
+
+        <!-- ── Product info panel ─────────────────────────────────────── -->
+        <aside class="product-info reveal" aria-labelledby="product-name-14">
+
+          <figure class="product-info__figure">
+            <img src="../../assets/images/produit14.jpeg"
+                 alt="Débardeur Sport Dry-Fit — E-coomy"
+                 width="560" height="560"
+                 onerror="this.src='../../assets/images/placeholder.svg'">
+          </figure>
+
+          <div class="product-info__body">
+            <div class="product-info__badges">
+              <span class="badge badge--success">En stock</span>
+            </div>
+
+            <h1 id="product-name-14" class="product-info__title">Débardeur Sport Dry-Fit</h1>
+            <p class="product-info__price">1 800 DA</p>
+            <p class="product-info__desc">Débardeur de sport en polyester Dry-Fit 140 g/m² évacuant l'humidité. Tissu ultra-léger, traitement anti-odeur et séchage rapide en 20 min. Encolure et emmanchures renforcées. Idéal pour la salle de sport, le jogging ou les journées chaudes d'été.</p>
+            <ul class="product-info__meta">
+              <li><strong>Référence&nbsp;:</strong> EHP-014</li>
+              <li><strong>Catégorie&nbsp;:</strong> T-shirts</li>
+              <li><strong>Vendeur&nbsp;:</strong> E-coomy</li>
+            </ul>
+          </div>
+
+        </aside>
+
+        <!-- ── Order form ─────────────────────────────────────────────── -->
+        <div class="order-form-wrapper reveal">
+          <h2 id="order-heading-14">Passer commande</h2>
+
+          <form class="form-stack"
+                action="../../commande.php" method="post"
+                data-validate data-form-type="order"
+                novalidate>
+
+            <input type="hidden" name="product_name" value="Débardeur Sport Dry-Fit">
+            <input type="hidden" name="product_ref"  value="EHP-014">
+
+            <!-- Customer -->
+            <fieldset>
+              <legend>Vos informations</legend>
+
+              <div class="form-group">
+                <label for="ord14-name">
+                  Nom complet <span class="req" aria-hidden="true">*</span>
+                </label>
+                <input id="ord14-name"
+                       type="text" name="customer_name"
+                       autocomplete="name"
+                       placeholder="Prénom Nom"
+                       required aria-required="true">
+              </div>
+
+              <div class="form-group">
+                <label for="ord14-email">
+                  E-mail <span class="req" aria-hidden="true">*</span>
+                </label>
+                <input id="ord14-email"
+                       type="email" name="email"
+                       autocomplete="email"
+                       placeholder="exemple@email.com"
+                       required aria-required="true">
+              </div>
+
+              <div class="form-group">
+                <label for="ord14-phone">
+                  Téléphone <span class="req" aria-hidden="true">*</span>
+                </label>
+                <input id="ord14-phone"
+                       type="tel" name="phone"
+                       autocomplete="tel"
+                       placeholder="+213 5XX XXX XXX"
+                       required aria-required="true">
+              </div>
+
+            </fieldset>
+
+            <!-- Delivery address -->
+            <fieldset>
+              <legend>Adresse de livraison</legend>
+
+              <div class="form-group">
+                <label for="ord14-address">
+                  Adresse <span class="req" aria-hidden="true">*</span>
+                </label>
+                <input id="ord14-address"
+                       type="text" name="address"
+                       autocomplete="street-address"
+                       placeholder="Numéro, rue, quartier"
+                       required aria-required="true">
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="ord14-city">
+                    Wilaya <span class="req" aria-hidden="true">*</span>
+                  </label>
+                  <input id="ord14-city"
+                         type="text" name="city"
+                         autocomplete="address-level2"
+                         placeholder="Ex : Alger"
+                         required aria-required="true">
+                </div>
+                <div class="form-group">
+                  <label for="ord14-zip">Code postal</label>
+                  <input id="ord14-zip"
+                         type="text" name="zip"
+                         autocomplete="postal-code"
+                         placeholder="Ex : 16000">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="ord14-delivery">
+                  Mode de livraison <span class="req" aria-hidden="true">*</span>
+                </label>
+                <select id="ord14-delivery"
+                        name="delivery_method"
+                        required aria-required="true">
+                  <option value="">-- Choisir --</option>
+                  <option value="standard">Standard (3–5 jours) — Gratuit</option>
+                  <option value="express">Express (1–2 jours) — 500 DA</option>
+                  <option value="pickup">Retrait en magasin — Gratuit</option>
+                </select>
+              </div>
+
+            </fieldset>
+
+            <!-- Product options -->
+            <fieldset>
+              <legend>Options du produit</legend>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="ord14-qty">
+                    Quantité <span class="req" aria-hidden="true">*</span>
+                  </label>
+                  <input id="ord14-qty"
+                         type="number" name="quantity"
+                         min="1" max="99" value="1"
+                         required aria-required="true">
+                </div>
+                <div class="form-group">
+                  <label for="ord14-size">
+                    Taille <span class="req" aria-hidden="true">*</span>
+                  </label>
+                  <select id="ord14-size"
+                          name="size"
+                          required aria-required="true">
+                    <option value="">-- Choisir --</option>
+                    <option value="XS">XS</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="ord14-color">Couleur</label>
+                <select id="ord14-color" name="color">
+                  <option value="">-- Toutes les couleurs --</option>
+                  <option value="noir">Noir</option>
+                  <option value="blanc">Blanc</option>
+                  <option value="gris">Gris</option>
+                  <option value="bleu royal">Bleu royal</option>
+                  <option value="rouge">Rouge</option>
+                </select>
+              </div>
+
+            </fieldset>
+
+            <!-- Payment -->
+            <fieldset>
+              <legend>Mode de paiement</legend>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="payment" value="cod" checked>
+                  Paiement à la livraison
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="payment" value="ccp">
+                  CCP
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="payment" value="baridimob">
+                  BaridiMob
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- Notes -->
+            <div class="form-group">
+              <label for="ord14-notes">Notes (optionnel)</label>
+              <textarea id="ord14-notes"
+                        name="notes"
+                        rows="3"
+                        placeholder="Instructions spéciales pour la livraison…"
+                        maxlength="500"></textarea>
+            </div>
+
+            <button class="btn btn-primary btn-lg btn-full" type="submit">
+              <span class="btn-text">Valider la commande</span>
+            </button>
+
+          </form>
+        </div><!-- /.order-form-wrapper -->
+
+      </div><!-- /.order-layout -->
+    </section>
+
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="../../index.html" class="brand">E-coomy</a>
+          <p>Votre boutique de vêtements tendance en Algérie.</p>
+          <ul class="social-links" role="list">
+            <li><a href="#" aria-label="Facebook">Facebook</a></li>
+            <li><a href="#" aria-label="Instagram">Instagram</a></li>
+            <li><a href="#" aria-label="TikTok">TikTok</a></li>
+          </ul>
+        </div>
+
+        <nav class="footer-nav" aria-label="Liens rapides">
+          <h3>Liens rapides</h3>
+          <ul role="list">
+            <li><a href="../../index.html">Accueil</a></li>
+            <li><a href="../../index.html#produits">Produits</a></li>
+            <li><a href="../inscription.html">Inscription</a></li>
+            <li><a href="../login.html">Connexion</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-contact">
+          <h3>Contact</h3>
+          <address>
+            <p><strong>Email :</strong>
+              <a href="mailto:contact@e-coomy.dz">contact@e-coomy.dz</a></p>
+            <p><strong>Tél :</strong>
+              <a href="tel:+213555000000">+213 555 000 000</a></p>
+            <p>Alger, Algérie</p>
+          </address>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 E-coomy. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

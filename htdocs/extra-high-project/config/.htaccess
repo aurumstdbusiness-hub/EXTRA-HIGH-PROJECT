@@ -1,0 +1,2 @@
+# Deny all direct HTTP requests to this directory
+Require all denied

@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#0e7a71">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-coomy | Accueil</title>
+  <meta name="description" content="Boutique de vêtements tendance – E-coomy, Algérie.">
+<!-- fonts-preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/validation.js" defer></script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Passer au contenu principal</a>
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" role="navigation" aria-label="Navigation principale">
+        <a href="index.html" class="brand">E-coomy</a>
+
+        <button class="nav-toggle" type="button"
+                aria-label="Ouvrir le menu"
+                aria-expanded="false"
+                aria-controls="main-nav">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-links" id="main-nav" role="list">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="index.html#produits">Produits</a></li>
+          <li><a href="index.html#a-propos">À propos</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="pages/login.html"       class="btn btn-secondary btn-sm">Connexion</a>
+          <a href="pages/inscription.html" class="btn btn-primary   btn-sm">Inscription</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ── Hero ─────────────────────────────────────────────────────────── -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container hero-grid">
+
+        <div class="hero-copy">
+          <span class="eyebrow">Nouvelle collection 2026</span>
+          <h1 id="hero-heading">Style &amp; Qualité à votre portée</h1>
+          <p class="lead">
+            Découvrez notre sélection de vêtements tendance, faits pour durer.
+            Livraison rapide partout en Algérie.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary"   href="#produits">Voir les produits</a>
+            <a class="btn btn-secondary" href="pages/inscription.html">Créer un compte</a>
+          </div>
+        </div>
+
+        <figure class="hero-figure" aria-hidden="true">
+          <img src="assets/images/hero-banner.jpeg"
+               alt=""
+               width="640" height="560"
+               onerror="this.src='assets/images/placeholder.svg'">
+        </figure>
+
+      </div>
+    </section>
+
+    <!-- ── Features ─────────────────────────────────────────────────────── -->
+    <section class="section section--features" aria-labelledby="features-heading">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="features-heading">Pourquoi nous choisir&nbsp;?</h2>
+        </div>
+        <ul class="features-grid" role="list">
+
+          <li class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">🚚</div>
+            <h3>Livraison rapide</h3>
+            <p>Livraison en 24–48 h dans toute l'Algérie.</p>
+          </li>
+
+          <li class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">🎁</div>
+            <h3>Qualité garantie</h3>
+            <p>Tous nos produits sont sélectionnés avec soin.</p>
+          </li>
+
+          <li class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">🔒</div>
+            <h3>Paiement sécurisé</h3>
+            <p>Paiement à la livraison, CCP ou BaridiMob.</p>
+          </li>
+
+          <li class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">🔄</div>
+            <h3>Retours faciles</h3>
+            <p>30 jours pour changer d'avis sans frais.</p>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ── Products ──────────────────────────────────────────────────────── -->
+    <section class="section" id="produits" aria-labelledby="produits-heading">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="produits-heading">Nos produits</h2>
+          <p>Explorez notre catalogue de 20 articles.</p>
+        </div>
+                <ul class="card-grid stagger" role="list">
+        <li role="listitem" class="reveal">
+          <article class="product-card">
+            <a href="pages/products/commande_produit1.html" class="product-card__link">
+            <div class="product-card__badge product-card__badge--new" aria-label="Nouveauté">Nouveauté</div>
+              <figure class="product-card__figure">
+                <img src="assets/images/produit1.jpeg"
+                     alt="T-shirt Premium Oversize"
+                     width="400" height="400"
+                     loading="lazy"
+                     onerror="this.src='assets/images/placeholder.svg'">
+              </figure>
+              <div class="product-card__body">
+                <p class="product-card__cat">T-shirts</p>
+                <h3 class="product-card__name">T-shirt Premium Oversize</h3>
+                <p class="product-card__desc">T-shirt oversize au tombé parfait, 100 % coton peigné.</p>
+                <div class="product-card__footer">
+                  <span class="product-card__price">2 200 DA</span>
+                  <span class="btn btn-primary btn-sm" aria-hidden="true">Commander</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li role="listitem" class="reveal">
+          <article class="product-card">
+            <a href="pages/products/commande_produit2.html" class="product-card__link">
+            <div class="product-card__badge product-card__badge--hot" aria-label="Best-seller">Best-seller</div>
+              <figure class="product-card__figure">
+                <img src="assets/images/produit2.jpeg"
+                     alt="Jean Slim Fit Stretch"
+                     width="400" height="400"
+                     loading="lazy"
+                     onerror="this.src='assets/images/placeholder.svg'">
+              </figure>
+              <div class="product-card__body">
+                <p class="product-card__cat">Pantalons</p>
+                <h3 class="product-card__name">Jean Slim Fit Stretch</h3>
+                <p class="product-card__desc">Jean slim stretch ultra-confortable, coupe ajustée et moderne.</p>
+                <div class="product-card__footer">
+                  <span class="product-card__price">4 800 DA</span>
+                  <span class="btn btn-primary btn-sm" aria-hidden="true">Commander</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li role="listitem" class="reveal">
+          <article class="product-card">
+            <a href="pages/products/commande_produit3.html" class="product-card__link">
+            <div class="product-card__badge product-card__badge--new" aria-label="Nouveauté">Nouveauté</div>
+              <figure class="product-card__figure">
+                <img src="assets/images/produit3.jpeg"
+                     alt="Hoodie Urbain Premium"
+                     width="400" height="400"
+                     loading="lazy"
+                     onerror="this.src='assets/images/placeholder.svg'">
+              </figure>
+              <div class="product-card__body">
+                <p class="product-card__cat">Sweats</p>
+                <h3 class="product-card__name">Hoodie Urbain Premium</h3>
+                <p class="product-card__desc">Sweat à capuche en molleton brossé, ultra-doux et chaud.</p>
+                <div class="product-card__footer">
+                  <span class="product-card__price">3 500 DA</span>
+                  <span class="btn btn-primary btn-sm" aria-hidden="true">Commander</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li role="listitem" class="reveal">
+          <article class="product-card">
+            <a href="pages/products/commande_produit4.html" class="product-card__link">
+            <div class="product-card__badge product-card__badge--hot" aria-label="Exclusif">Exclusif</div>
+              <figure class="product-card__figure">
+                <img src="assets/images/produit4.jpeg"
+                     alt="Veste Bomber Street"
+                     width="400" height="400"
+                     loading="lazy"
+                     onerror="this.src='assets/images/placeholder.svg'">
+              </figure>
+              <div class="product-card__body">
+                <p class="product-card__cat">Vestes</p>
+                <h3 class="product-card__name">Veste Bomber Street</h3>
+                <p class="product-card__desc">Bomber streetwear en polyester satiné, style urbain affirmé.</p>
+                <div class="product-card__footer">
+                  <span class="product-card__price">6 500 DA</span>
+                  <span class="btn btn-primary btn-sm" aria-hidden="true">Commander</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li role="listitem" class="reveal">
+          <article class="product-card">
+            <a href="pages/products/commande_produit5.html" class="product-card__link">
+              <figure class="product-card__figure">
+                <img src="assets/images/produit5.jpeg"
+                     alt="Short Jogger Coton"
+                     width="400" height="400"
+                     loading="lazy"
+                     onerror="this.src='assets/images/placeholder.svg'">
+              </figure>
+              <div class="product-card__body">
+                <p class="product-card__cat">Shorts</p>
+                <h3 class="product-card__name">Short Jogger Coton</h3>
+                <p class="product-card__desc">Short jogger en coton gratté, confortable toute la journée.</p>
+                <div class="product-card__footer">
+                  <span class="product-card__price">2 800 DA</span>
+                  <span class="btn btn-primary btn-sm" aria-hidden="true">Commander</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li role="listitem" class="reveal">
+          <article class="product-card">
+            <a href="pages/products/commande_produit6.html" class="product-card__link">
+            <div class="product-card__badge product-card__badge--hot" aria-label="Best-seller">Best-seller</div>
+              <figure class="product-card__figure">
+                <img src="assets/images/produit6.jpeg"
+                     alt="Polo Classique Piqué"
+                     width="400" height="400"
+                     loading="lazy"
+                     onerror="this.src='assets/images/placeholder.svg'">
+              </figure>
+              <div class="product-card__body">
+                <p class="product-card__cat">Polos</p>
+                <h3 class="product-card__name">Polo Classique Piqué</h3>
+                <p class="product-card__desc">Polo en piqué de coton, coupe droite intemporelle.</p>
+                <div class="product-card__footer">
+                  <span class="product-card__price">3 200 DA</span>
+                  <span class="btn btn-primary btn-sm" aria-hidden="true">Commander</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li role="listitem" class="reveal">
+          <article class="product-card">
+            <a href="pages/products/commande_produit7.html" class="product-card__link">
+              <figure class="product-card__figure">
+                <img src="assets/images/produit7.jpeg"
+                     alt="Sweat Capuche Zippé"
+                     width="400" height="400"
+                     loading="lazy"
+                     onerror="this.src='assets/images/placeholder.svg'">
+              </figure>
+              <div class="product-card__body">
+                <p class="product-card__cat">Sweats</p>
+                <h3 class="product-card__name">Sweat Capuche Zippé</h3>
+                <p class="product-card__desc">Sweat zippé en molleton lourd, style campus authentique.</p>
+                <div class="product-card__footer">
+                  <span class="product-card__price">4 200 DA</span>
+                  <span class="btn btn-primary btn-sm" aria-hidden="true">Commander</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li role="listitem" class="reveal">
+          <article class="product-card">
+            <a href="pages/products/commande_produit8.html" class="product-card__link">
+            <div class="product-card__badge product-card__badge--new" aria-label="Pack">Pack</div>
+              <figure class="product-card__figure">
+                <img src="assets/images/produit8.jpeg"
+                     alt="Ensemble Jogging Set"
+                     width="400" height="400"
+                     loading="lazy"
+                     onerror="this.src='assets/images/placeholder.svg'">
+              </figure>
+              <div class="product-card__body">
+                <p class="product-card__cat">Ensembles</p>
+                <h3 class="product-card__name">Ensemble Jogging Set</h3>
+                <p class="product-card__desc">Set sweat + pantalon assorti, look coordonné parfait.</p>
+                <div class="product-card__footer">
+                  <span class="product-card__price">5 500 DA</span>
+                  <span class="btn btn-primary btn-sm" aria-hidden="true">Commander</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li role="listitem" class="reveal">
+          <article class="product-card">
+            <a href="pages/products/commande_produit9.html" class="product-card__link">
+            <div class="product-card__badge product-card__badge--new" aria-label="Été 2026">Été 2026</div>
+              <figure class="product-card__figure">
+                <img src="assets/images/produit9.jpeg"
+                     alt="Chemise Lin Estivale"
+                     width="400" height="400"
+                     loading="lazy"
+                     onerror="this.src='assets/images/placeholder.svg'">
+              </figure>
+              <div class="product-card__body">
+                <p class="product-card__cat">Chemises</p>
+                <h3 class="product-card__name">Chemise Lin Estivale</h3>
+                <p class="product-card__desc">Chemise en lin naturel, légère et respirante pour l'été.</p>
+                <div class="product-card__footer">
+                  <span class="product-card__price">3 800 DA</span>
+                  <span class="btn btn-primary btn-sm" aria-hidden="true">Commander</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li role="listitem" class="reveal">
+          <article class="product-card">
+            <a href="pages/products/commande_produit10.html" class="product-card__link">
+              <figure class="product-card__figure">
+                <img src="assets/images/produit10.jpeg"
+                     alt="Bermuda Cargo Style"
+                     width="400" height="400"
+                     loading="lazy"
+                     onerror="this.src='assets/images/placeholder.svg'">
+              </figure>
+              <div class="product-card__body">
+                <p class="product-card__cat">Shorts</p>
+                <h3 class="product-card__name">Bermuda Cargo Style</h3>
+                <p class="product-card__desc">Bermuda cargo multi-poches, style urbain fonctionnel.</p>
+                <div class="product-card__footer">
+                  <span class="product-card__price">3 100 DA</span>
+                  <span class="btn btn-primary btn-sm" aria-hidden="true">Commander</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li role="listitem" class="reveal">
+          <article class="product-card">
+            <a href="pages/products/commande_produit11.html" class="product-card__link">
+            <div class="product-card__badge product-card__badge--new" aria-label="Nouveauté">Nouveauté</div>
+              <figure class="product-card__figure">
+                <img src="assets/images/produit11.jpeg"
+                     alt="T-shirt Graphique Print"
+                     width="400" height="400"
+                     loading="lazy"
+                     onerror="this.src='assets/images/placeholder.svg'">
+              </figure>
+              <div class="product-card__body">
+                <p class="product-card__cat">T-shirts</p>
+                <h3 class="product-card__name">T-shirt Graphique Print</h3>
+                <p class="product-card__desc">T-shirt avec impression graphique exclusive Extra High.</p>
+                <div class="product-card__footer">
+                  <span class="product-card__price">2 500 DA</span>
+                  <span class="btn btn-primary btn-sm" aria-hidden="true">Commander</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li role="listitem" class="reveal">
+          <article class="product-card">
+            <a href="pages/products/commande_produit12.html" class="product-card__link">
+            <div class="product-card__badge product-card__badge--hot" aria-label="Premium">Premium</div>
+              <figure class="product-card__figure">
+                <img src="assets/images/produit12.jpeg"
+                     alt="Manteau Long Premium"
+                     width="400" height="400"
+                     loading="lazy"
+                     onerror="this.src='assets/images/placeholder.svg'">
+              </figure>
+              <div class="product-card__body">
+                <p class="product-card__cat">Manteaux</p>
+                <h3 class="product-card__name">Manteau Long Premium</h3>
+                <p class="product-card__desc">Manteau long oversize en lainage mélangé, coupe droite élégante.</p>
+                <div class="product-card__footer">
+                  <span class="product-card__price">8 900 DA</span>
+                  <span class="btn btn-primary btn-sm" aria-hidden="true">Commander</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li role="listitem" class="reveal">
+          <article class="product-card">
+            <a href="pages/products/commande_produit13.html" class="product-card__link">
+            <div class="product-card__badge product-card__badge--hot" aria-label="Best-seller">Best-seller</div>
+              <figure class="product-card__figure">
+                <img src="assets/images/produit13.jpeg"
+                     alt="Pantalon Chino Slim"
+                     width="400" height="400"
+                     loading="lazy"
+                     onerror="this.src='assets/images/placeholder.svg'">
+              </figure>
+              <div class="product-card__body">
+                <p class="product-card__cat">Pantalons</p>
+                <h3 class="product-card__name">Pantalon Chino Slim</h3>
+                <p class="product-card__desc">Pantalon chino slim en coton stretch, coupe soignée.</p>
+                <div class="product-card__footer">
+                  <span class="product-card__price">4 300 DA</span>
+                  <span class="btn btn-primary btn-sm" aria-hidden="true">Commander</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li role="listitem" class="reveal">
+          <article class="product-card">
+            <a href="pages/products/commande_produit14.html" class="product-card__link">
+              <figure class="product-card__figure">
+                <img src="assets/images/produit14.jpeg"
+                     alt="Débardeur Sport Dry-Fit"
+                     width="400" height="400"
+                     loading="lazy"
+                     onerror="this.src='assets/images/placeholder.svg'">
+              </figure>
+              <div class="product-card__body">
+                <p class="product-card__cat">T-shirts</p>
+                <h3 class="product-card__name">Débardeur Sport Dry-Fit</h3>
+                <p class="product-card__desc">Débardeur technique Dry-Fit, idéal sport et chaleur.</p>
+                <div class="product-card__footer">
+                  <span class="product-card__price">1 800 DA</span>
+                  <span class="btn btn-primary btn-sm" aria-hidden="true">Commander</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li role="listitem" class="reveal">
+          <article class="product-card">
+            <a href="pages/products/commande_produit15.html" class="product-card__link">
+            <div class="product-card__badge product-card__badge--new" aria-label="Nouveauté">Nouveauté</div>
+              <figure class="product-card__figure">
+                <img src="assets/images/produit15.jpeg"
+                     alt="Veste Windbreaker Légère"
+                     width="400" height="400"
+                     loading="lazy"
+                     onerror="this.src='assets/images/placeholder.svg'">
+              </figure>
+              <div class="product-card__body">
+                <p class="product-card__cat">Vestes</p>
+                <h3 class="product-card__name">Veste Windbreaker Légère</h3>
+                <p class="product-card__desc">Coupe-vent léger et compactable, parfait mi-saison.</p>
+                <div class="product-card__footer">
+                  <span class="product-card__price">5 800 DA</span>
+                  <span class="btn btn-primary btn-sm" aria-hidden="true">Commander</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li role="listitem" class="reveal">
+          <article class="product-card">
+            <a href="pages/products/commande_produit16.html" class="product-card__link">
+            <div class="product-card__badge product-card__badge--new" aria-label="Hiver 2026">Hiver 2026</div>
+              <figure class="product-card__figure">
+                <img src="assets/images/produit16.jpeg"
+                     alt="Pull Tricot Oversize"
+                     width="400" height="400"
+                     loading="lazy"
+                     onerror="this.src='assets/images/placeholder.svg'">
+              </figure>
+              <div class="product-card__body">
+                <p class="product-card__cat">Pulls</p>
+                <h3 class="product-card__name">Pull Tricot Oversize</h3>
+                <p class="product-card__desc">Pull oversize en maille tricot douce, style scandinave.</p>
+                <div class="product-card__footer">
+                  <span class="product-card__price">4 600 DA</span>
+                  <span class="btn btn-primary btn-sm" aria-hidden="true">Commander</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li role="listitem" class="reveal">
+          <article class="product-card">
+            <a href="pages/products/commande_produit17.html" class="product-card__link">
+            <div class="product-card__badge product-card__badge--new" aria-label="Pack">Pack</div>
+              <figure class="product-card__figure">
+                <img src="assets/images/produit17.jpeg"
+                     alt="Set Sport Matching"
+                     width="400" height="400"
+                     loading="lazy"
+                     onerror="this.src='assets/images/placeholder.svg'">
+              </figure>
+              <div class="product-card__body">
+                <p class="product-card__cat">Ensembles</p>
+                <h3 class="product-card__name">Set Sport Matching</h3>
+                <p class="product-card__desc">Ensemble sport deux pièces assorti, look athlétic coordonné.</p>
+                <div class="product-card__footer">
+                  <span class="product-card__price">6 200 DA</span>
+                  <span class="btn btn-primary btn-sm" aria-hidden="true">Commander</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li role="listitem" class="reveal">
+          <article class="product-card">
+            <a href="pages/products/commande_produit18.html" class="product-card__link">
+              <figure class="product-card__figure">
+                <img src="assets/images/produit18.jpeg"
+                     alt="Chemise Flanelle Carreaux"
+                     width="400" height="400"
+                     loading="lazy"
+                     onerror="this.src='assets/images/placeholder.svg'">
+              </figure>
+              <div class="product-card__body">
+                <p class="product-card__cat">Chemises</p>
+                <h3 class="product-card__name">Chemise Flanelle Carreaux</h3>
+                <p class="product-card__desc">Chemise en flanelle à carreaux, chaude et tendance.</p>
+                <div class="product-card__footer">
+                  <span class="product-card__price">3 900 DA</span>
+                  <span class="btn btn-primary btn-sm" aria-hidden="true">Commander</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li role="listitem" class="reveal">
+          <article class="product-card">
+            <a href="pages/products/commande_produit19.html" class="product-card__link">
+            <div class="product-card__badge product-card__badge--hot" aria-label="Tendance">Tendance</div>
+              <figure class="product-card__figure">
+                <img src="assets/images/produit19.jpeg"
+                     alt="Jean Wide Leg Baggy"
+                     width="400" height="400"
+                     loading="lazy"
+                     onerror="this.src='assets/images/placeholder.svg'">
+              </figure>
+              <div class="product-card__body">
+                <p class="product-card__cat">Pantalons</p>
+                <h3 class="product-card__name">Jean Wide Leg Baggy</h3>
+                <p class="product-card__desc">Jean wide leg à coupe baggy, style années 90 revisité.</p>
+                <div class="product-card__footer">
+                  <span class="product-card__price">5 100 DA</span>
+                  <span class="btn btn-primary btn-sm" aria-hidden="true">Commander</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li role="listitem" class="reveal">
+          <article class="product-card">
+            <a href="pages/products/commande_produit20.html" class="product-card__link">
+            <div class="product-card__badge product-card__badge--hot" aria-label="Exclusif">Exclusif</div>
+              <figure class="product-card__figure">
+                <img src="assets/images/produit20.jpeg"
+                     alt="Hoodie Brodé Signature"
+                     width="400" height="400"
+                     loading="lazy"
+                     onerror="this.src='assets/images/placeholder.svg'">
+              </figure>
+              <div class="product-card__body">
+                <p class="product-card__cat">Sweats</p>
+                <h3 class="product-card__name">Hoodie Brodé Signature</h3>
+                <p class="product-card__desc">Hoodie premium avec broderie logo E-coomy.</p>
+                <div class="product-card__footer">
+                  <span class="product-card__price">4 900 DA</span>
+                  <span class="btn btn-primary btn-sm" aria-hidden="true">Commander</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ── À propos ───────────────────────────────────────────────────────── -->
+    <section class="section section--about" id="a-propos" aria-labelledby="about-heading">
+      <div class="container about-grid">
+
+        <figure class="about-figure">
+          <img src="assets/images/about.jpeg"
+               alt="Équipe E-coomy"
+               width="560" height="420"
+               onerror="this.src='assets/images/placeholder.svg'">
+        </figure>
+
+        <div class="about-copy">
+          <span class="eyebrow">À propos</span>
+          <h2 id="about-heading">Notre histoire</h2>
+          <p>
+            E-coomy est né d'une passion pour la mode et le style.
+            Fondée en Algérie, notre marque propose des vêtements
+            alliant confort, tendance et accessibilité.
+          </p>
+          <p>
+            Chaque pièce est choisie pour répondre aux attentes des jeunes
+            Algériens en matière de mode contemporaine.
+          </p>
+          <a href="pages/inscription.html" class="btn btn-primary">Rejoindre la communauté</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="index.html" class="brand">E-coomy</a>
+          <p>Votre boutique de vêtements tendance en Algérie.</p>
+          <ul class="social-links" role="list">
+            <li><a href="#" aria-label="Facebook">Facebook</a></li>
+            <li><a href="#" aria-label="Instagram">Instagram</a></li>
+            <li><a href="#" aria-label="TikTok">TikTok</a></li>
+          </ul>
+        </div>
+
+        <nav class="footer-nav" aria-label="Liens rapides">
+          <h3>Liens rapides</h3>
+          <ul role="list">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html#produits">Produits</a></li>
+            <li><a href="pages/inscription.html">Inscription</a></li>
+            <li><a href="pages/login.html">Connexion</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-contact">
+          <h3>Contact</h3>
+          <address>
+            <p><strong>Email :</strong>
+              <a href="mailto:contact@e-coomy.dz">contact@e-coomy.dz</a></p>
+            <p><strong>Tél :</strong>
+              <a href="tel:+213555000000">+213 555 000 000</a></p>
+            <p>Alger, Algérie</p>
+          </address>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 E-coomy. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+XAMPP SETUP — EXTRA HIGH PROJECT
+=================================
+Guide complet d'installation et de configuration
+Phases 1–15  |  Mai 2026
+
+
+═══════════════════════════════════════════
+ ÉTAPE 1 — TÉLÉCHARGER XAMPP
+═══════════════════════════════════════════
+
+  URL : https://www.apachefriends.org/download.html
+  Choisir : Windows, PHP 8.x (8.1 ou 8.2 recommandé)
+
+
+═══════════════════════════════════════════
+ ÉTAPE 2 — INSTALLER XAMPP
+═══════════════════════════════════════════
+
+  1. Exécuter l'installeur en tant qu'Administrateur
+  2. Chemin par défaut : C:\xampp
+  3. Composants requis :  Apache  |  MySQL  |  PHP  |  phpMyAdmin
+  4. Décocher : FileZilla, Mercury (non nécessaires)
+
+
+═══════════════════════════════════════════
+ ÉTAPE 3 — DÉMARRER LES SERVICES
+═══════════════════════════════════════════
+
+  Ouvrir : C:\xampp\xampp-control.exe
+
+  Cliquer [Start] à côté de Apache  → ligne devient verte
+  Cliquer [Start] à côté de MySQL   → ligne devient verte
+
+  Si port 80 occupé par IIS/Skype :
+    Apache → Config → httpd.conf → chercher "Listen 80" → changer en "Listen 8080"
+    Puis accéder via http://localhost:8080/...
+
+
+═══════════════════════════════════════════
+ ÉTAPE 4 — COPIER LE PROJET
+═══════════════════════════════════════════
+
+  Source      : (ce dossier)  extra-high-project\
+  Destination : C:\xampp\htdocs\extra-high-project\
+
+  Vérifier :   C:\xampp\htdocs\extra-high-project\index.html  existe
+
+
+═══════════════════════════════════════════
+ ÉTAPE 5 — CRÉER LA BASE DE DONNÉES
+═══════════════════════════════════════════
+
+  Navigateur → http://localhost/phpmyadmin
+
+  Méthode A — Import (recommandé) :
+    Menu du haut → Importer
+    Choisir un fichier → database\setup.sql
+    Format : SQL
+    Cliquer → Exécuter
+
+  Méthode B — Manuelle :
+    Clic + → Créer une base "Base_Client" → Encodage utf8mb4_unicode_ci
+    Sélectionner Base_Client → SQL → coller contenu de database\setup.sql
+
+  Résultat attendu dans le panneau gauche :
+    Base_Client
+      ├── Client
+      └── Commande_produit
+
+
+═══════════════════════════════════════════
+ ÉTAPE 6 — OUVRIR LE SITE
+═══════════════════════════════════════════
+
+  http://localhost/extra-high-project/
+
+
+═══════════════════════════════════════════
+ ÉTAPE 7 — VÉRIFIER L'INSTALLATION
+═══════════════════════════════════════════
+
+  http://localhost/extra-high-project/tests/test_suite.php
+
+  Score attendu : 100% (tous PASS)
+  Si DB tests en rouge : MySQL n'est pas démarré
+
+
+═══════════════════════════════════════════
+ IDENTIFIANTS BASE DE DONNÉES
+═══════════════════════════════════════════
+
+  Host     : 127.0.0.1
+  Base     : Base_Client
+  User     : root
+  Password : (vide — défaut XAMPP)
+
+  Ces valeurs sont définies dans config/db_mysqli.php (constantes MYS_*)
+  NE PAS changer sauf si votre XAMPP utilise un mot de passe root différent.
+
+
+═══════════════════════════════════════════
+ SCHÉMA DES TABLES
+═══════════════════════════════════════════
+
+  Table : Client
+  ────────────────────────────────────────
+  id_client      INT UNSIGNED  PK AUTO_INCREMENT
+  prenom         VARCHAR(80)   NOT NULL
+  nom            VARCHAR(80)   NOT NULL
+  email          VARCHAR(180)  UNIQUE NOT NULL
+  phone          VARCHAR(20)
+  date_naissance DATE
+  adresse        VARCHAR(255)
+  wilaya         VARCHAR(80)
+  code_postal    VARCHAR(10)
+  mot_de_passe   VARCHAR(255)  NOT NULL  (bcrypt hash)
+  created_at     TIMESTAMP     DEFAULT CURRENT_TIMESTAMP
+
+  Table : Commande_produit
+  ────────────────────────────────────────
+  id_commande    INT UNSIGNED  PK AUTO_INCREMENT
+  id_client      INT UNSIGNED  FK → Client.id_client (nullable)
+  product_name   VARCHAR(120)  NOT NULL
+  product_ref    VARCHAR(40)
+  customer_name  VARCHAR(160)  NOT NULL
+  email          VARCHAR(180)  NOT NULL
+  phone          VARCHAR(20)   NOT NULL
+  adresse        VARCHAR(255)  NOT NULL
+  wilaya         VARCHAR(80)   NOT NULL
+  code_postal    VARCHAR(10)
+  livraison      ENUM(standard, express, pickup)  NOT NULL
+  quantite       TINYINT UNSIGNED  DEFAULT 1
+  taille         ENUM(XS, S, M, L, XL, XXL)  NOT NULL
+  couleur        VARCHAR(40)
+  paiement       ENUM(cod, ccp, baridimob)  NOT NULL
+  notes          TEXT
+  statut         ENUM(en_attente, confirmee, expediee, livree, annulee)  DEFAULT en_attente
+  created_at     TIMESTAMP  DEFAULT CURRENT_TIMESTAMP
+
+
+═══════════════════════════════════════════
+ RÉSOLUTION DE PROBLÈMES
+═══════════════════════════════════════════
+
+  Problème : Page blanche / erreur 500
+    → Vérifier que PHP 8 est actif : phpinfo() dans un fichier test
+    → Activer les erreurs le temps du débogage :
+       En haut de login.php : ini_set('display_errors', '1');
+
+  Problème : "Connexion base de données impossible"
+    → MySQL n'est pas démarré dans XAMPP Control Panel
+    → Ou la base Base_Client n'a pas été créée (refaire étape 5)
+
+  Problème : Redirection vers login.html sur commande
+    → Normal ! Il faut être connecté pour commander.
+       Créer un compte sur /inscription.html d'abord.
+
+  Problème : Port 80 occupé
+    → Changer le port Apache dans httpd.conf (voir étape 3)
+
+  Problème : Images produits absentes (placeholder visible)
+    → Normal — les images produits ne sont pas incluses dans la livraison.
+       Placer des images 400x400 nommées produit1.jpg … produit20.jpg
+       dans assets/images/ pour les afficher.

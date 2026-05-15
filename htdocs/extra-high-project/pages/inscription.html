@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-coomy | Inscription</title>
+<!-- fonts-preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/validation.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" role="navigation" aria-label="Navigation principale">
+        <a href="../index.html" class="brand">E-coomy</a>
+
+        <button class="nav-toggle" type="button"
+                aria-label="Ouvrir le menu"
+                aria-expanded="false"
+                aria-controls="main-nav">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-links" id="main-nav" role="list">
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a href="../index.html#produits">Produits</a></li>
+          <li><a href="../index.html#a-propos">À propos</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="login.html"       class="btn btn-secondary btn-sm">Connexion</a>
+          <a href="inscription.html" class="btn btn-primary   btn-sm">Inscription</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="auth-shell auth-shell--wide" id="main-content">
+    <section class="auth-card auth-card--wide" aria-labelledby="signup-heading">
+
+      <header class="auth-card__header">
+        <h1 id="signup-heading">Créer un compte</h1>
+        <p class="muted">Rejoignez la communauté E-coomy.</p>
+      </header>
+
+      <form class="form-stack"
+            action="../inscription.php" method="post"
+            data-validate data-form-type="signup"
+            novalidate>
+
+        <!-- Identity -->
+        <fieldset>
+          <legend>Identité</legend>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="sig-prenom">Prénom <span class="req" aria-hidden="true">*</span></label>
+              <input id="sig-prenom"
+                     type="text" name="prenom"
+                     autocomplete="given-name"
+                     placeholder="Votre prénom"
+                     required aria-required="true">
+            </div>
+            <div class="form-group">
+              <label for="sig-nom">Nom <span class="req" aria-hidden="true">*</span></label>
+              <input id="sig-nom"
+                     type="text" name="nom"
+                     autocomplete="family-name"
+                     placeholder="Votre nom"
+                     required aria-required="true">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="sig-email">Adresse e-mail <span class="req" aria-hidden="true">*</span></label>
+            <input id="sig-email"
+                   type="email" name="email"
+                   autocomplete="email"
+                   placeholder="exemple@email.com"
+                   required aria-required="true">
+          </div>
+
+          <div class="form-group">
+            <label for="sig-phone">Téléphone</label>
+            <input id="sig-phone"
+                   type="tel" name="phone"
+                   autocomplete="tel"
+                   placeholder="+213 5XX XXX XXX">
+          </div>
+
+          <div class="form-group">
+            <label for="sig-dob">
+              Date de naissance <span class="req" aria-hidden="true">*</span>
+            </label>
+            <input id="sig-dob"
+                   type="date" name="date_naissance"
+                   autocomplete="bday"
+                   max=""
+                   required aria-required="true">
+          </div>
+        </fieldset>
+
+        <!-- Address -->
+        <fieldset>
+          <legend>Adresse de livraison</legend>
+          <div class="form-group">
+            <label for="sig-address">Adresse</label>
+            <input id="sig-address"
+                   type="text" name="address"
+                   autocomplete="street-address"
+                   placeholder="Numéro, rue, quartier">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="sig-city">Wilaya</label>
+              <input id="sig-city"
+                     type="text" name="city"
+                     autocomplete="address-level2"
+                     placeholder="Ex : Alger">
+            </div>
+            <div class="form-group">
+              <label for="sig-zip">Code postal</label>
+              <input id="sig-zip"
+                     type="text" name="zip"
+                     autocomplete="postal-code"
+                     placeholder="Ex : 16000">
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Security -->
+        <fieldset>
+          <legend>Sécurité</legend>
+          <div class="form-group">
+            <label for="sig-password">
+              Mot de passe <span class="req" aria-hidden="true">*</span>
+            </label>
+            <div class="input-wrapper">
+              <input id="sig-password"
+                     type="password" name="password"
+                     autocomplete="new-password"
+                     minlength="8"
+                     placeholder="8 caractères minimum"
+                     required aria-required="true">
+              <button type="button"
+                      class="toggle-password"
+                      aria-label="Afficher / masquer le mot de passe"
+                      aria-pressed="false">
+                <span aria-hidden="true">👁</span>
+              </button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="sig-confirm">
+              Confirmer le mot de passe <span class="req" aria-hidden="true">*</span>
+            </label>
+            <input id="sig-confirm"
+                   type="password" name="password_confirm"
+                   autocomplete="new-password"
+                   placeholder="Retaper le mot de passe"
+                   required aria-required="true">
+          </div>
+        </fieldset>
+
+        <label class="checkbox-label">
+          <input type="checkbox" name="terms" required aria-required="true">
+          J'accepte les <a href="#">conditions d'utilisation</a>
+          et la <a href="#">politique de confidentialité</a>.
+        </label>
+
+        <button class="btn btn-primary btn-full" type="submit">
+          Créer mon compte
+        </button>
+
+      </form>
+
+      <p class="auth-link">
+        Déjà inscrit&nbsp;? <a href="login.html">Se connecter</a>
+      </p>
+
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="../index.html" class="brand">E-coomy</a>
+          <p>Votre boutique de vêtements tendance en Algérie.</p>
+          <ul class="social-links" role="list">
+            <li><a href="#" aria-label="Facebook">Facebook</a></li>
+            <li><a href="#" aria-label="Instagram">Instagram</a></li>
+            <li><a href="#" aria-label="TikTok">TikTok</a></li>
+          </ul>
+        </div>
+
+        <nav class="footer-nav" aria-label="Liens rapides">
+          <h3>Liens rapides</h3>
+          <ul role="list">
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="../index.html#produits">Produits</a></li>
+            <li><a href="inscription.html">Inscription</a></li>
+            <li><a href="login.html">Connexion</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-contact">
+          <h3>Contact</h3>
+          <address>
+            <p><strong>Email :</strong>
+              <a href="mailto:contact@e-coomy.dz">contact@e-coomy.dz</a></p>
+            <p><strong>Tél :</strong>
+              <a href="tel:+213555000000">+213 555 000 000</a></p>
+            <p>Alger, Algérie</p>
+          </address>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 E-coomy. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

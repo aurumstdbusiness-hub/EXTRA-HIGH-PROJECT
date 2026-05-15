@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-coomy | Connexion</title>
+<!-- fonts-preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/validation.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" role="navigation" aria-label="Navigation principale">
+        <a href="../index.html" class="brand">E-coomy</a>
+
+        <button class="nav-toggle" type="button"
+                aria-label="Ouvrir le menu"
+                aria-expanded="false"
+                aria-controls="main-nav">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-links" id="main-nav" role="list">
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a href="../index.html#produits">Produits</a></li>
+          <li><a href="../index.html#a-propos">À propos</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="login.html"       class="btn btn-secondary btn-sm">Connexion</a>
+          <a href="inscription.html" class="btn btn-primary   btn-sm">Inscription</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="auth-shell" id="main-content">
+    <section class="auth-card" aria-labelledby="login-heading">
+
+      <header class="auth-card__header">
+        <h1 id="login-heading">Connexion</h1>
+        <p class="muted">Content de vous revoir&nbsp;!</p>
+      </header>
+
+      <form class="form-stack"
+            action="../login.php" method="post"
+            data-validate data-form-type="login"
+            novalidate>
+
+        <div class="form-group">
+          <label for="login-email">Adresse e-mail</label>
+          <input id="login-email"
+                 type="email" name="email"
+                 autocomplete="email"
+                 placeholder="exemple@email.com"
+                 required aria-required="true">
+        </div>
+
+        <div class="form-group">
+          <div class="label-row">
+            <label for="login-password">Mot de passe</label>
+            <a href="#" class="form-hint-link">Mot de passe oublié&nbsp;?</a>
+          </div>
+          <div class="input-wrapper">
+            <input id="login-password"
+                   type="password" name="password"
+                   autocomplete="current-password"
+                   required aria-required="true">
+            <button type="button"
+                    class="toggle-password"
+                    aria-label="Afficher / masquer le mot de passe"
+                    aria-pressed="false">
+              <span aria-hidden="true">👁</span>
+            </button>
+          </div>
+        </div>
+
+        <label class="checkbox-label">
+          <input type="checkbox" name="remember"> Se souvenir de moi
+        </label>
+
+        <button class="btn btn-primary btn-full" type="submit">
+          Se connecter
+        </button>
+
+      </form>
+
+      <p class="auth-link">
+        Pas encore de compte&nbsp;? <a href="inscription.html">Créer un compte</a>
+      </p>
+
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="../index.html" class="brand">E-coomy</a>
+          <p>Votre boutique de vêtements tendance en Algérie.</p>
+          <ul class="social-links" role="list">
+            <li><a href="#" aria-label="Facebook">Facebook</a></li>
+            <li><a href="#" aria-label="Instagram">Instagram</a></li>
+            <li><a href="#" aria-label="TikTok">TikTok</a></li>
+          </ul>
+        </div>
+
+        <nav class="footer-nav" aria-label="Liens rapides">
+          <h3>Liens rapides</h3>
+          <ul role="list">
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="../index.html#produits">Produits</a></li>
+            <li><a href="inscription.html">Inscription</a></li>
+            <li><a href="login.html">Connexion</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-contact">
+          <h3>Contact</h3>
+          <address>
+            <p><strong>Email :</strong>
+              <a href="mailto:contact@e-coomy.dz">contact@e-coomy.dz</a></p>
+            <p><strong>Tél :</strong>
+              <a href="tel:+213555000000">+213 555 000 000</a></p>
+            <p>Alger, Algérie</p>
+          </address>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 E-coomy. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+E-COOMY — Checklist de Soumission  (Phase 15)
+==========================================================
+
+AVANT DE RENDRE LE PROJET, VÉRIFIER CHAQUE POINT :
+
+
+[ ] XAMPP installé et fonctionnel
+    Apache : vert dans XAMPP Control Panel
+    MySQL  : vert dans XAMPP Control Panel
+
+[ ] Base de données importée
+    phpMyAdmin → Base_Client → tables Client + Commande_produit présentes
+
+[ ] Site accessible à http://localhost/extra-high-project/
+
+[ ] Dossier copié dans C:\xampp\htdocs\extra-high-project\
+
+
+────────────────────────────────────────────────────────────
+TESTS AUTOMATISÉS
+────────────────────────────────────────────────────────────
+
+[ ] http://localhost/extra-high-project/tests/test_suite.php
+    → Score idéal : 100% (tous PASS)
+    → Si DB tests échouent : vérifier que MySQL est démarré
+
+[ ] tests/test_validation.html (ouvrir dans navigateur)
+    → Score attendu : 100%
+
+
+────────────────────────────────────────────────────────────
+FLUX MANUELS À TESTER
+────────────────────────────────────────────────────────────
+
+INSCRIPTION
+  [ ] Aller sur /inscription.html
+  [ ] Remplir tous les champs (prénom, nom, email, téléphone, date naissance, mot de passe)
+  [ ] Vérifier : erreurs temps réel (champ vide, email invalide, mot de passe faible)
+  [ ] Soumettre → redirection vers index.html (session active)
+  [ ] Vérifier dans phpMyAdmin : nouvelle ligne dans Client
+
+CONNEXION
+  [ ] Aller sur /login.html
+  [ ] Tester email/mot de passe incorrect → message "E-mail ou mot de passe incorrect."
+  [ ] Tester avec un compte créé → redirection vers index.html
+  [ ] Vérifier que /login.html redirige si déjà connecté
+
+COMMANDE
+  [ ] Déconnecté → aller sur /commande_produit1.html → remplir formulaire → soumettre
+      → DOIT rediriger vers /login.html (auth guard)
+  [ ] Connecté → aller sur /commande_produit1.html → soumettre formulaire complet
+      → Confirmation avec numéro de commande
+  [ ] Vérifier dans phpMyAdmin : nouvelle ligne dans Commande_produit avec id_client
+
+DÉCONNEXION
+  [ ] Cliquer Déconnexion → session détruite → retour index.html
+  [ ] Aller sur /commande_produit1.html → redirige vers login.html
+
+VALIDATION JS
+  [ ] Soumettre formulaire vide → erreurs apparaissent en rouge
+  [ ] Taper un email invalide → erreur en temps réel
+  [ ] Mot de passe : barre de force change couleur (rouge → orange → vert)
+  [ ] Toast de notification s'affiche sur soumission invalide
+
+
+────────────────────────────────────────────────────────────
+RESPONSIVE
+────────────────────────────────────────────────────────────
+
+  [ ] Desktop (1280px+)  : grille 4-5 colonnes, hero image visible
+  [ ] Tablette (768px)   : grille 2 colonnes, menu hamburger
+  [ ] Mobile (480px)     : grille 2 colonnes, mise en page empilée
+  [ ] Mobile (360px)     : tout lisible, pas de défilement horizontal
+  [ ] Dark mode          : activer dans l'OS → design change automatiquement
+
+
+────────────────────────────────────────────────────────────
+NAVIGATION
+────────────────────────────────────────────────────────────
+
+  [ ] Toutes les pages ont un lien "Accueil" fonctionnel
+  [ ] Le bouton hamburger fonctionne sur mobile
+  [ ] Le lien "skip to content" fonctionne au Tab (accessibilité)
+  [ ] Les 20 cartes produits de index.html mènent aux bonnes pages
+
+
+────────────────────────────────────────────────────────────
+QUALITÉ DU CODE
+────────────────────────────────────────────────────────────
+
+  [ ] Tous les PHP : declare(strict_types=1)
+  [ ] Aucune requête SQL avec interpolation de chaîne (tout en bind_param)
+  [ ] Aucun mot de passe en clair en base de données
+  [ ] Les mots de passe hashés avec PASSWORD_BCRYPT
+
+
+────────────────────────────────────────────────────────────
+FICHIERS REQUIS POUR LA REMISE
+────────────────────────────────────────────────────────────
+
+  [ ] extra-high-project/ (dossier complet)
+  [ ] database/setup.sql (schéma importable)
+  [ ] README.txt (ce fichier)
+  [ ] database/XAMPP_SETUP.txt (guide d'installation)
+
+
+────────────────────────────────────────────────────────────
+NOTES POUR LE CORRECTEUR
+────────────────────────────────────────────────────────────
+
+  1. Importer database/setup.sql dans phpMyAdmin avant toute chose
+  2. Aucun produit image réel n'est inclus :
+       les images .jpg tombent sur placeholder.svg (comportement attendu)
+       Pour de vraies images : placer produit1.jpg … produit20.jpg dans assets/images/
+  3. Le compte de test peut être créé via /inscription.html
+  4. Le rapport de tests complet est sur /tests/test_suite.php

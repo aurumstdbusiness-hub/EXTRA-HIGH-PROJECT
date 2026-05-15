@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Set sweat + pantalon assorti, look coordonné parfait. Livraison rapide partout en Algérie – E-coomy.">
+  <meta name="theme-color" content="#0e7a71">
+  <title>E-coomy | Ensemble Jogging Set</title>
+<!-- fonts-preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="../../assets/js/validation.js" defer></script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Passer au contenu principal</a>
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" role="navigation" aria-label="Navigation principale">
+        <a href="../../index.html" class="brand">E-coomy</a>
+
+        <button class="nav-toggle" type="button"
+                aria-label="Ouvrir le menu"
+                aria-expanded="false"
+                aria-controls="main-nav">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-links" id="main-nav" role="list">
+          <li><a href="../../index.html">Accueil</a></li>
+          <li><a href="../../index.html#produits">Produits</a></li>
+          <li><a href="../../index.html#a-propos">À propos</a></li>
+          <li><a href="../../index.html#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="../login.html"       class="btn btn-secondary btn-sm">Connexion</a>
+          <a href="../inscription.html" class="btn btn-primary   btn-sm">Inscription</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Fil d'ariane">
+      <div class="container">
+        <ol>
+          <li><a href="../../index.html">Accueil</a></li>
+          <li><a href="../../index.html#produits">Produits</a></li>
+          <li aria-current="page">Ensemble Jogging Set</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- Product + Order layout -->
+    <section class="section order-section"
+             aria-labelledby="order-heading-8">
+      <div class="container order-layout">
+
+        <!-- ── Product info panel ─────────────────────────────────────── -->
+        <aside class="product-info reveal" aria-labelledby="product-name-8">
+
+          <figure class="product-info__figure">
+            <img src="../../assets/images/produit8.jpeg"
+                 alt="Ensemble Jogging Set — E-coomy"
+                 width="560" height="560"
+                 onerror="this.src='../../assets/images/placeholder.svg'">
+          </figure>
+
+          <div class="product-info__body">
+            <div class="product-info__badges">
+              <span class="badge badge--new">Pack</span>
+              <span class="badge badge--success">En stock</span>
+            </div>
+
+            <h1 id="product-name-8" class="product-info__title">Ensemble Jogging Set</h1>
+            <p class="product-info__price">5 500 DA</p>
+            <p class="product-info__desc">Ensemble deux pièces coordonné : sweat col rond oversize + pantalon jogger à taille élastique. Tissu french terry 280 g/m² très confortable et respirant. Vendu comme un set pour un look parfaitement assorti sans effort de coordination.</p>
+            <ul class="product-info__meta">
+              <li><strong>Référence&nbsp;:</strong> EHP-008</li>
+              <li><strong>Catégorie&nbsp;:</strong> Ensembles</li>
+              <li><strong>Vendeur&nbsp;:</strong> E-coomy</li>
+            </ul>
+          </div>
+
+        </aside>
+
+        <!-- ── Order form ─────────────────────────────────────────────── -->
+        <div class="order-form-wrapper reveal">
+          <h2 id="order-heading-8">Passer commande</h2>
+
+          <form class="form-stack"
+                action="../../commande.php" method="post"
+                data-validate data-form-type="order"
+                novalidate>
+
+            <input type="hidden" name="product_name" value="Ensemble Jogging Set">
+            <input type="hidden" name="product_ref"  value="EHP-008">
+
+            <!-- Customer -->
+            <fieldset>
+              <legend>Vos informations</legend>
+
+              <div class="form-group">
+                <label for="ord8-name">
+                  Nom complet <span class="req" aria-hidden="true">*</span>
+                </label>
+                <input id="ord8-name"
+                       type="text" name="customer_name"
+                       autocomplete="name"
+                       placeholder="Prénom Nom"
+                       required aria-required="true">
+              </div>
+
+              <div class="form-group">
+                <label for="ord8-email">
+                  E-mail <span class="req" aria-hidden="true">*</span>
+                </label>
+                <input id="ord8-email"
+                       type="email" name="email"
+                       autocomplete="email"
+                       placeholder="exemple@email.com"
+                       required aria-required="true">
+              </div>
+
+              <div class="form-group">
+                <label for="ord8-phone">
+                  Téléphone <span class="req" aria-hidden="true">*</span>
+                </label>
+                <input id="ord8-phone"
+                       type="tel" name="phone"
+                       autocomplete="tel"
+                       placeholder="+213 5XX XXX XXX"
+                       required aria-required="true">
+              </div>
+
+            </fieldset>
+
+            <!-- Delivery address -->
+            <fieldset>
+              <legend>Adresse de livraison</legend>
+
+              <div class="form-group">
+                <label for="ord8-address">
+                  Adresse <span class="req" aria-hidden="true">*</span>
+                </label>
+                <input id="ord8-address"
+                       type="text" name="address"
+                       autocomplete="street-address"
+                       placeholder="Numéro, rue, quartier"
+                       required aria-required="true">
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="ord8-city">
+                    Wilaya <span class="req" aria-hidden="true">*</span>
+                  </label>
+                  <input id="ord8-city"
+                         type="text" name="city"
+                         autocomplete="address-level2"
+                         placeholder="Ex : Alger"
+                         required aria-required="true">
+                </div>
+                <div class="form-group">
+                  <label for="ord8-zip">Code postal</label>
+                  <input id="ord8-zip"
+                         type="text" name="zip"
+                         autocomplete="postal-code"
+                         placeholder="Ex : 16000">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="ord8-delivery">
+                  Mode de livraison <span class="req" aria-hidden="true">*</span>
+                </label>
+                <select id="ord8-delivery"
+                        name="delivery_method"
+                        required aria-required="true">
+                  <option value="">-- Choisir --</option>
+                  <option value="standard">Standard (3–5 jours) — Gratuit</option>
+                  <option value="express">Express (1–2 jours) — 500 DA</option>
+                  <option value="pickup">Retrait en magasin — Gratuit</option>
+                </select>
+              </div>
+
+            </fieldset>
+
+            <!-- Product options -->
+            <fieldset>
+              <legend>Options du produit</legend>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="ord8-qty">
+                    Quantité <span class="req" aria-hidden="true">*</span>
+                  </label>
+                  <input id="ord8-qty"
+                         type="number" name="quantity"
+                         min="1" max="99" value="1"
+                         required aria-required="true">
+                </div>
+                <div class="form-group">
+                  <label for="ord8-size">
+                    Taille <span class="req" aria-hidden="true">*</span>
+                  </label>
+                  <select id="ord8-size"
+                          name="size"
+                          required aria-required="true">
+                    <option value="">-- Choisir --</option>
+                    <option value="XS">XS</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="ord8-color">Couleur</label>
+                <select id="ord8-color" name="color">
+                  <option value="">-- Toutes les couleurs --</option>
+                  <option value="noir intégral">Noir intégral</option>
+                  <option value="gris total look">Gris total look</option>
+                  <option value="beige nude">Beige nude</option>
+                  <option value="bleu marine">Bleu marine</option>
+                </select>
+              </div>
+
+            </fieldset>
+
+            <!-- Payment -->
+            <fieldset>
+              <legend>Mode de paiement</legend>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="payment" value="cod" checked>
+                  Paiement à la livraison
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="payment" value="ccp">
+                  CCP
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="payment" value="baridimob">
+                  BaridiMob
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- Notes -->
+            <div class="form-group">
+              <label for="ord8-notes">Notes (optionnel)</label>
+              <textarea id="ord8-notes"
+                        name="notes"
+                        rows="3"
+                        placeholder="Instructions spéciales pour la livraison…"
+                        maxlength="500"></textarea>
+            </div>
+
+            <button class="btn btn-primary btn-lg btn-full" type="submit">
+              <span class="btn-text">Valider la commande</span>
+            </button>
+
+          </form>
+        </div><!-- /.order-form-wrapper -->
+
+      </div><!-- /.order-layout -->
+    </section>
+
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="../../index.html" class="brand">E-coomy</a>
+          <p>Votre boutique de vêtements tendance en Algérie.</p>
+          <ul class="social-links" role="list">
+            <li><a href="#" aria-label="Facebook">Facebook</a></li>
+            <li><a href="#" aria-label="Instagram">Instagram</a></li>
+            <li><a href="#" aria-label="TikTok">TikTok</a></li>
+          </ul>
+        </div>
+
+        <nav class="footer-nav" aria-label="Liens rapides">
+          <h3>Liens rapides</h3>
+          <ul role="list">
+            <li><a href="../../index.html">Accueil</a></li>
+            <li><a href="../../index.html#produits">Produits</a></li>
+            <li><a href="../inscription.html">Inscription</a></li>
+            <li><a href="../login.html">Connexion</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-contact">
+          <h3>Contact</h3>
+          <address>
+            <p><strong>Email :</strong>
+              <a href="mailto:contact@e-coomy.dz">contact@e-coomy.dz</a></p>
+            <p><strong>Tél :</strong>
+              <a href="tel:+213555000000">+213 555 000 000</a></p>
+            <p>Alger, Algérie</p>
+          </address>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 E-coomy. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

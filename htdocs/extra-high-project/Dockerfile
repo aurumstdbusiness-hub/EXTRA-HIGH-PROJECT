@@ -16,7 +16,7 @@ RUN docker-php-ext-install mysqli \
  && docker-php-ext-enable  mysqli
 
 # ── 3. Apache modules ─────────────────────────────────────────────────────────
-RUN a2enmod rewrite headers
+RUN a2enmod rewrite headers remoteip
 
 # ── 4. PHP configuration (production baseline) ───────────────────────────────
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"

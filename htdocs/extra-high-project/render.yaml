@@ -13,7 +13,8 @@ services:
     name: e-coomy
     env: docker
     plan: free
-    dockerfilePath: ./Dockerfile
+    dockerfilePath: ./htdocs/extra-high-project/Dockerfile
+    dockerContext: ./htdocs/extra-high-project
 
     # Render health check — must return HTTP 200
     healthCheckPath: /

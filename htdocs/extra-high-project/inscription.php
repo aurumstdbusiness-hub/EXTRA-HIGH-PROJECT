@@ -196,7 +196,10 @@ if ($method === 'POST') {
             mysqli_stmt_close($chk);
 
         } catch (\Throwable $ex) {
+            // TEMPORARY DEBUG — remove after fixing
             $errors[] = 'Erreur base de données. Veuillez réessayer.';
+            $errors[] = '[DEBUG] ' . get_class($ex) . ': ' . $ex->getMessage();
+            $errors[] = '[DEBUG] File: ' . basename($ex->getFile()) . ':' . $ex->getLine();
             error_log('inscription.php ERROR: [' . get_class($ex) . '] ' . $ex->getMessage() . ' in ' . $ex->getFile() . ':' . $ex->getLine());
         }
     }

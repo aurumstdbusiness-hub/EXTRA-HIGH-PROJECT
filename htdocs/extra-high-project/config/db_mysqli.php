@@ -12,11 +12,12 @@ declare(strict_types=1);
  */
 
 // ── Resolve DB credentials ────────────────────────────────────────────────────
-// Priority 1 : MYSQL_URL (Railway format)  mysql://user:pass@host:port/dbname
-// Priority 2 : individual DB_* env vars    (Render / Docker)
-// Priority 3 : XAMPP localhost defaults    (local development)
+// Priority 1 : MYSQL_PUBLIC_URL (Railway public — works from Render / external)
+// Priority 2 : MYSQL_URL / DATABASE_URL  (may be internal-only on Railway)
+// Priority 3 : individual DB_* env vars  (Render / Docker)
+// Priority 4 : XAMPP localhost defaults   (local development)
 
-$_ehp_url = getenv('MYSQL_URL') ?: getenv('DATABASE_URL') ?: '';
+$_ehp_url = getenv('MYSQL_PUBLIC_URL') ?: getenv('MYSQL_URL') ?: getenv('DATABASE_URL') ?: '';
 
 if ($_ehp_url !== '') {
     $_ehp_parsed = parse_url($_ehp_url);

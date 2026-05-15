@@ -13,7 +13,11 @@ declare(strict_types=1);
 // secure     — Set to 1 on HTTPS; keep 0 for local XAMPP development
 ini_set('session.cookie_httponly', '1');
 ini_set('session.cookie_samesite', 'Lax');
-ini_set('session.cookie_secure',   '0');   // change to '1' on production HTTPS
+// Auto-detect HTTPS: works on Render (proxy sets HTTP_X_FORWARDED_PROTO = https)
+$_ehp_https = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+           || (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https');
+ini_set('session.cookie_secure', $_ehp_https ? '1' : '0');
+unset($_ehp_https);
 ini_set('session.use_strict_mode', '1');   // reject unrecognised session IDs
 ini_set('session.gc_maxlifetime',  '3600'); // 1-hour idle expiry
 

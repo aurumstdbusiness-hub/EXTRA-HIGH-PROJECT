@@ -11,10 +11,12 @@ declare(strict_types=1);
  * Change only the four constants below when deploying.
  */
 
-define('MYS_HOST',    '127.0.0.1');
-define('MYS_USER',    'root');
-define('MYS_PASS',    '');
-define('MYS_DB',      'Base_Client');
+// Credentials from environment variables — set in Render dashboard or .env
+// Falls back to XAMPP defaults so local development still works unchanged.
+define('MYS_HOST',    (string)(getenv('DB_HOST') ?: '127.0.0.1'));
+define('MYS_USER',    (string)(getenv('DB_USER') ?: 'root'));
+define('MYS_PASS',    (string)(getenv('DB_PASS') ?: ''));
+define('MYS_DB',      (string)(getenv('DB_NAME') ?: 'Base_Client'));
 define('MYS_CHARSET', 'utf8mb4');
 
 /**

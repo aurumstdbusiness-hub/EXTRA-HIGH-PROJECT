@@ -1,0 +1,32 @@
+# =============================================================================
+#  E-coomy — render.yaml  (Infrastructure as Code)
+#
+#  Deploy via Render Blueprint:
+#    Dashboard → New → Blueprint → connect your GitHub repo → Deploy
+#
+#  Or deploy manually:
+#    Dashboard → New → Web Service → Docker → connect repo → set env vars
+# =============================================================================
+
+services:
+  - type: web
+    name: e-coomy
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+
+    # Render health check — must return HTTP 200
+    healthCheckPath: /
+
+    # Environment variables
+    # Set DB_HOST / DB_USER / DB_PASS in the Render dashboard.
+    # Get these from your external MySQL provider (Railway, Aiven, etc.)
+    envVars:
+      - key: DB_HOST
+        sync: false          # fill in Render dashboard
+      - key: DB_USER
+        sync: false          # fill in Render dashboard
+      - key: DB_PASS
+        sync: false          # fill in Render dashboard
+      - key: DB_NAME
+        value: Base_Client   # change if your provider uses a different DB name

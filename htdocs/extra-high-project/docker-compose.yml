@@ -1,0 +1,48 @@
+# =============================================================================
+#  E-coomy — docker-compose.yml
+#  For LOCAL Docker testing only.
+#  Usage: docker compose up --build
+#  Then open: http://localhost:8080
+# =============================================================================
+version: "3.9"
+
+services:
+
+  # ── PHP / Apache application ───────────────────────────────────────────────
+  app:
+    build: .
+    ports:
+      - "8080:80"
+    environment:
+      DB_HOST: db
+      DB_USER: root
+      DB_PASS: rootpassword
+      DB_NAME: Base_Client
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      # Live-edit: mount source into container (dev only)
+      # Comment this out to test the exact production image
+      - .:/var/www/html
+
+  # ── MySQL 8 database ───────────────────────────────────────────────────────
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD:      rootpassword
+      MYSQL_DATABASE:           Base_Client
+      MYSQL_CHARACTER_SET_SERVER: utf8mb4
+      MYSQL_COLLATION_SERVER:   utf8mb4_unicode_ci
+    volumes:
+      # Auto-import schema on first run
+      - ./database/setup.sql:/docker-entrypoint-initdb.d/01_setup.sql
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-prootpassword"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  db_data:

@@ -22,11 +22,16 @@ services:
     # Set DB_HOST / DB_USER / DB_PASS in the Render dashboard.
     # Get these from your external MySQL provider (Railway, Aiven, etc.)
     envVars:
+      # Option A — Railway-style single URL (MYSQL_URL)
+      # Paste the full mysql://user:pass@host:port/dbname string here
+      - key: MYSQL_URL
+        sync: false          # fill in Render dashboard
+      # Option B — individual variables (if not using MYSQL_URL)
       - key: DB_HOST
-        sync: false          # fill in Render dashboard
+        sync: false
       - key: DB_USER
-        sync: false          # fill in Render dashboard
+        sync: false
       - key: DB_PASS
-        sync: false          # fill in Render dashboard
+        sync: false
       - key: DB_NAME
-        value: Base_Client   # change if your provider uses a different DB name
+        value: Base_Client

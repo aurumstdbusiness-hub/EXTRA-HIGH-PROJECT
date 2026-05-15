@@ -110,6 +110,15 @@ if ($method === 'POST') {
         $errors[] = 'Les mots de passe ne correspondent pas.';
     }
 
+    // Length limits — match VARCHAR sizes in setup.sql
+    if (mb_strlen($prenom)       > 80)  $errors[] = 'Prénom trop long (max 80 car.).';
+    if (mb_strlen($nom)          > 80)  $errors[] = 'Nom trop long (max 80 car.).';
+    if (mb_strlen($email)        > 180) $errors[] = 'E-mail trop long (max 180 car.).';
+    if (mb_strlen($phone)        > 20)  $errors[] = 'Téléphone trop long (max 20 car.).';
+    if (mb_strlen($adresse)      > 255) $errors[] = 'Adresse trop longue (max 255 car.).';
+    if (mb_strlen($wilaya)       > 80)  $errors[] = 'Wilaya trop longue (max 80 car.).';
+    if (mb_strlen($code_postal)  > 10)  $errors[] = 'Code postal trop long (max 10 car.).';
+
     /* ══════════════════════════════════════════════════════════════════════
        STEP 3 — Database operations (only when no validation errors)
     ════════════════════════════════════════════════════════════════════════ */
@@ -196,10 +205,7 @@ if ($method === 'POST') {
             mysqli_stmt_close($chk);
 
         } catch (\Throwable $ex) {
-            // TEMPORARY DEBUG — remove after fixing
             $errors[] = 'Erreur base de données. Veuillez réessayer.';
-            $errors[] = '[DEBUG] ' . get_class($ex) . ': ' . $ex->getMessage();
-            $errors[] = '[DEBUG] File: ' . basename($ex->getFile()) . ':' . $ex->getLine();
             error_log('inscription.php ERROR: [' . get_class($ex) . '] ' . $ex->getMessage() . ' in ' . $ex->getFile() . ':' . $ex->getLine());
         }
     }

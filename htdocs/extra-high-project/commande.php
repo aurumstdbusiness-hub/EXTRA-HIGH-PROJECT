@@ -106,16 +106,18 @@ if ($method === 'POST') {
        STEP 5 — Database INSERT
        Prepared statement with bind_param — user data is NEVER interpolated
        into the query string (SQL injection protection).
-       Nullable columns receive null (not an empty string) when empty.
+       Nullable columns receive empty string when empty (PHP 8.1+ strict_types
+     forbids null with 's' bind type).
     ════════════════════════════════════════════════════════════════════════ */
     if (empty($errors)) {
         try {
             $conn = mysqli_db();
 
-            // Map nullable columns: store NULL instead of empty string
-            $code_postal_db = $code_postal !== '' ? $code_postal : null;
-            $couleur_db     = $couleur     !== '' ? $couleur     : null;
-            $notes_db       = $notes       !== '' ? $notes       : null;
+            // Map nullable columns: empty string for unused values
+            // (PHP 8.1+ strict_types forbids null with 's' bind type)
+            $code_postal_db = $code_postal !== '' ? $code_postal : '';
+            $couleur_db     = $couleur     !== '' ? $couleur     : '';
+            $notes_db       = $notes       !== '' ? $notes       : '';
 
             // 15 parameters — type string: i=INT, s=STRING
             //  1  id_client      i
@@ -158,9 +160,9 @@ if ($method === 'POST') {
             mysqli_stmt_close($stmt);
             $success = true;
 
-        } catch (RuntimeException $ex) {
+        } catch (\Throwable $ex) {
             $errors[] = 'Erreur base de données. Veuillez réessayer.';
-            error_log('commande.php mysqli: ' . $ex->getMessage());
+            error_log('commande.php ERROR: [' . get_class($ex) . '] ' . $ex->getMessage() . ' in ' . $ex->getFile() . ':' . $ex->getLine());
         }
     }
 }

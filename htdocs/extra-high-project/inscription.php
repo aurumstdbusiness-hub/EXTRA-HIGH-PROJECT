@@ -141,11 +141,12 @@ if ($method === 'POST') {
                 ─────────────────────────────────────────────────────────── */
                 $hash = password_hash($password, PASSWORD_BCRYPT);
 
-                // Nullable optional fields — store NULL when empty
-                $phone_val   = $phone       !== '' ? $phone       : null;
-                $adresse_val = $adresse     !== '' ? $adresse     : null;
-                $wilaya_val  = $wilaya      !== '' ? $wilaya      : null;
-                $zip_val     = $code_postal !== '' ? $code_postal : null;
+                // Optional fields — empty string for unused values
+                // (PHP 8.1+ strict_types forbids null with 's' bind type)
+                $phone_val   = $phone       !== '' ? $phone       : '';
+                $adresse_val = $adresse     !== '' ? $adresse     : '';
+                $wilaya_val  = $wilaya      !== '' ? $wilaya      : '';
+                $zip_val     = $code_postal !== '' ? $code_postal : '';
 
                 /* ── INSERT new client row (prepared statement) ────────────
                    bind_param types:
@@ -194,9 +195,9 @@ if ($method === 'POST') {
 
             mysqli_stmt_close($chk);
 
-        } catch (RuntimeException $ex) {
+        } catch (\Throwable $ex) {
             $errors[] = 'Erreur base de données. Veuillez réessayer.';
-            error_log('inscription.php mysqli: ' . $ex->getMessage());
+            error_log('inscription.php ERROR: [' . get_class($ex) . '] ' . $ex->getMessage() . ' in ' . $ex->getFile() . ':' . $ex->getLine());
         }
     }
 }

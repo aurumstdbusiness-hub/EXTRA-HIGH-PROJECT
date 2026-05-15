@@ -128,9 +128,9 @@ if ($method === 'POST') {
                 exit;
             }
 
-        } catch (RuntimeException $ex) {
+        } catch (\Throwable $ex) {
             $errors[] = 'Erreur base de données. Veuillez réessayer.';
-            error_log('login.php mysqli: ' . $ex->getMessage());
+            error_log('login.php ERROR: [' . get_class($ex) . '] ' . $ex->getMessage() . ' in ' . $ex->getFile() . ':' . $ex->getLine());
         }
     }
 }

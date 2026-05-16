@@ -3,13 +3,68 @@
    validation_login · validation_infos · validation_order
    Password strength · Real-time checks · Error/success states
    Scroll-reveal · Toast · Ripple · Mobile nav · Lazy images
+   Theme toggle (light / dark)
    ============================================================ */
 'use strict';
+
+/* ── Theme: apply BEFORE DOMContentLoaded to avoid flash ──────────────── */
+(function () {
+  const saved = localStorage.getItem('ecoomy-theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const theme = saved || (prefersDark ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-theme', theme);
+})();
 
 document.addEventListener('DOMContentLoaded', () => {
 
   // ── 1. Page entrance ──────────────────────────────────────────────────
   requestAnimationFrame(() => document.body.classList.add('page-loaded'));
+
+  // ── 1b. Theme toggle — inject button into navbar ──────────────────────
+  (function initThemeToggle() {
+    const navbar = document.querySelector('.navbar');
+    if (!navbar) return;
+
+    // SVG icons — moon (crescent) and sun
+    const moonSVG = `<svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
+    const sunSVG  = `<svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`;
+
+    // Create button
+    const btn = document.createElement('button');
+    btn.className  = 'theme-toggle';
+    btn.type       = 'button';
+    btn.setAttribute('aria-label', 'Changer le thème (clair / sombre)');
+    btn.innerHTML  = moonSVG + sunSVG;
+
+    // Insert before .nav-actions (so it appears next to the auth buttons)
+    const navActions = navbar.querySelector('.nav-actions');
+    if (navActions) {
+      navbar.insertBefore(btn, navActions);
+    } else {
+      navbar.appendChild(btn);
+    }
+
+    // Toggle handler
+    btn.addEventListener('click', () => {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme') || 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('ecoomy-theme', next);
+
+      // Animate icon rotation
+      btn.classList.remove('is-animating');
+      void btn.offsetWidth; // force reflow
+      btn.classList.add('is-animating');
+      btn.addEventListener('transitionend', () => {
+        btn.classList.remove('is-animating');
+      }, { once: true });
+
+      // Fallback: remove animation class after timeout
+      setTimeout(() => btn.classList.remove('is-animating'), 600);
+    });
+  })();
 
   // ── 2. Smooth anchor scrolling ────────────────────────────────────────
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {

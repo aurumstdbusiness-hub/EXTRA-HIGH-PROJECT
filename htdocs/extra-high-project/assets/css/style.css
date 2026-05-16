@@ -449,7 +449,7 @@ p { max-width: 72ch; }
   width: 100%;
   aspect-ratio: auto;
   height: auto;
-  object-fit: contain;
+  object-fit: cover;
   border-radius: inherit;
 }
 
@@ -570,7 +570,7 @@ p { max-width: 72ch; }
 }
 
 .about-figure { border-radius: var(--r-2xl); overflow: hidden; box-shadow: var(--shadow-xl); }
-.about-figure img { width: 100%; aspect-ratio: auto; height: auto; object-fit: contain; }
+.about-figure img { width: 100%; aspect-ratio: auto; height: auto; object-fit: cover; }
 .about-copy h2     { margin-bottom: var(--sp-6); }
 .about-copy p      { color: var(--c-text-2); margin-bottom: var(--sp-5); }
 
@@ -1456,7 +1456,7 @@ legend {
     max-height: 360px;
     overflow: hidden;
   }
-  .hero-figure img { aspect-ratio: auto; object-fit: contain; object-position: center; }
+  .hero-figure img { aspect-ratio: auto; object-fit: cover; object-position: center; }
 
   /* Layouts */
   .about-grid   { grid-template-columns: 1fr; gap: var(--sp-8); }
@@ -1511,7 +1511,7 @@ legend {
   .section--sm { padding-block: var(--sp-10); }
 
   /* Hero — responsive display on mobile */
-  .hero-figure { max-height: 400px; margin-top: var(--sp-8); }
+  .hero-figure { display: block; max-height: 360px; margin-top: var(--sp-8); border-radius: var(--r-xl); }
   .hero-actions { flex-wrap: wrap; gap: var(--sp-3); }
   .hero-actions .btn { flex: 1 1 140px; min-width: 0; }
 
